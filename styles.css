@@ -1,0 +1,168 @@
+@import url('https://fonts.google.com/specimen/Inter');
+@import url('https://fonts.google.com/specimen/Lexend+Deca');
+
+:root{
+    font-size: 15px;
+    --soft-violet: hsl(277, 64%, 61%);
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    --very-dark-blue: hsl(233, 47%, 7%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Inter';
+    background-color: var(--very-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+p{
+    font-size: 0.8rem;
+    color: hsla(0,0%,100%,0.75);
+}
+
+h1,h2,h3{
+    font-size: 1.5rem;
+    color: white;
+    font-family: inherit;
+}
+
+.container-wrapper{
+    margin: 50px;
+}
+
+.container{
+    background-color: var(--dark-desaturated-blue);
+    padding: 0;
+    display: flex;
+    flex: 1;
+    max-width: 700px;
+    border-radius: 5px;
+}
+
+    .left-content{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px;
+    }
+
+        .left-content h1 span{
+            color: var(--soft-violet);
+        }
+
+        .left-content p{
+            line-height: 1.5;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .left-content .stats{
+            margin-top: 35px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .left-content .stats .stats-text :is(h2,p){
+            font-size: 1rem;
+        }
+
+
+
+    .right-content{
+        display: flex;
+        position: relative;
+    }
+        .right-content::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: hsla(277, 70%, 50%, 0.4);
+            border-radius: 0 5px 5px 0;
+
+        }
+
+        .right-content img{
+            width: 350px;
+            border-radius: 0 5px 5px 0;
+
+        }
+
+    
+.top-content{
+    position: relative;
+    overflow: hidden;
+}
+
+.top-content img.mobile-image{
+    display: none;
+    border-radius: 5px 5px 0 0;
+}
+
+.top-content::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(277, 70%, 50%, 0.4);
+    border-radius: 5px;
+}
+
+.attribution{
+    position: absolute;
+    bottom: 50px;
+    color: white;
+    padding: 40px;
+}
+
+.attribution-text a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    background-color: var(--dark-desaturated-blue);
+}
+
+@media screen and (max-width: 764px) {
+
+    .container{
+        max-width: 350px;
+        /* margin: 50px;    */
+        flex-direction: column;
+    }
+
+    .top-content img.mobile-image{
+        display: block;
+        width: 350px;
+    }
+
+    .right-content img{
+        display: none;
+    }
+
+
+    .left-content{
+        text-align: center;
+    }
+
+    .left-content .stats{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .attribution{
+        position: relative;
+    }
+}
